@@ -1,0 +1,25 @@
+on:
+  - pull_request
+
+jobs:
+  protect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Get files changed
+        uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          # Base branch used to get changed files
+          base: ${{ github.event.pull_request.base.ref }}
+
+          # Returns list of changed files matching each filter
+          filters: |
+            notAllowed:
+              - '.github/hww-booster-pack-updates/**'
+      - name: Fail if the script was not run
+        if: ${{ steps.filter.outputs.notAllowed == 'true' }}
+        run: |
+          echo "Please run the script in the PR body!"
+          exit 1
