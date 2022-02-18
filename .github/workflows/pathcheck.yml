@@ -15,6 +15,7 @@ jobs:
           echo "this is stderr" >&2
           echo "this is stdout"
           echo "::endgroup::"
+          sleep 1
           echo "::group::stderr group" >&2
           echo -e "$msg" >&2
           echo "this is stdout2"
