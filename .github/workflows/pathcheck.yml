@@ -10,6 +10,6 @@ jobs:
         run: |
           set -e
           msg="foo\nbar\nbaz"
-          echo "::notice::$msg"
+          echo "::notice::$msg" >&2
         
 
