@@ -1,5 +1,5 @@
 on:
-  - pull_request
+  - push
 
 jobs:
   protect:
@@ -15,9 +15,5 @@ jobs:
           echo "this is stderr" >&2
           echo "this is stdout"
           echo "::endgroup::"
-          sleep 1
-          echo "::group::stderr group" >&2
-          echo -e "$msg" >&2
-          echo "this is stdout2"
-          echo "this is stderr2" >&2
-          echo "::endgroup::" >&2
+          echo "::notice::foo bar"
+          echo "::notice::baz qux"
