@@ -9,7 +9,7 @@ jobs:
         shell: bash
         run: |
           set -e
-          msg="$(echo -e "foo\nbar\nbaz")"
+          msg="foo\nbar\nbaz"
           echo "::notice::$msg"
         
 
