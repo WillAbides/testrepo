@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
-        run:
+        run: |
           echo ::notice::github.event.ref_type ${{ github.event.ref_type }}
           echo ::notice::github.event.ref ${{ github.event.ref }}
           echo ::notice::github.event_name ${{ github.event_name }}
