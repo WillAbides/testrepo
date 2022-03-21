@@ -9,9 +9,6 @@ jobs:
     steps:
       - shell: bash
         run:
-          echo github.event.ref_type ${{ github.event.ref_type }}
-          echo -e "\n\n"
-          echo github.event.ref ${{ github.event.ref }}
-          echo -e "\n\n"
-          echo github.event_name ${{ github.event_name }}
-          echo -e "\n\n"
+          echo ::notice::github.event.ref_type ${{ github.event.ref_type }}
+          echo ::notice::github.event.ref ${{ github.event.ref }}
+          echo ::notice::github.event_name ${{ github.event_name }}
