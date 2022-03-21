@@ -1,0 +1,14 @@
+on:
+  - push
+  - delete
+  - workflow_dispatch
+
+jobs:
+  foo:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run:
+          echo github.event.ref_type ${{ github.event.ref_type }}
+          echo github.event.ref ${{ github.event.ref }}
+          echo github.event_name ${{ github.event_name }}
