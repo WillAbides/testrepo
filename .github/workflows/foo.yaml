@@ -12,6 +12,6 @@ jobs:
           echo ::notice::github.event.ref_type ${{ github.event.ref_type }}
           echo ::notice::github.event.ref ${{ github.event.ref }}
           echo ::notice::github.event_name ${{ github.event_name }}
-      - uses: WillAbides/actiontest@v0.2.0
+      - uses: WillAbides/actiontest@v0.3.0
         with:
           who-to-greet: me
